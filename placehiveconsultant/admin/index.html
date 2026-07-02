@@ -1,27 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PlaceHive Consultants - CMS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PlaceHive CMS</title>
 </head>
+
 <body>
-  <!-- Include the Decap CMS script -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  
-  <!-- Netlify Identity Widget (Sirf ek baar) -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    // Yeh function automatically invite aur password reset links handle karega
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", function(user) {
-        if (!user) {
-          window.netlifyIdentity.on("login", function() {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<script>
+if (window.netlifyIdentity) {
+
+    window.netlifyIdentity.init();
+
+    // Login
+    window.netlifyIdentity.on("login", function () {
+        document.location.href = "/admin/";
+    });
+
+    // Logout
+    window.netlifyIdentity.on("logout", function () {
+        document.location.reload();
+    });
+
+    // Invite
+    window.netlifyIdentity.on("invite", function () {
+        console.log("Invite accepted");
+    });
+
+    // Recovery
+    window.netlifyIdentity.on("recovery", function () {
+        console.log("Recovery");
+    });
+
+}
+</script>
+
+<script src="https://unpkg.com/decap-cms@3.5.0/dist/decap-cms.js"></script>
+
 </body>
 </html>
