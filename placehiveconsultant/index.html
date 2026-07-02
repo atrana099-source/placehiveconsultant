@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlaceHive Consultants - Your Career Partner</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.jpeg" alt="PlaceHive Consultants" />
+                <span class="brand">PLACE HIVE CONSULTANTS</span>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <!-- Admin link for CMS login -->
+                <a href="/admin/" class="admin-btn">Admin</a>
+            </nav>
+            <button class="hamburger" id="hamburger">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>100% VERIFIED JOBS</h1>
+            <p>Your Career Partner</p>
+            <a href="#jobs" class="cta-btn">Explore Jobs</a>
+        </div>
+    </section>
+
+    <!-- Jobs Section (Dynamic list from CMS) -->
+    <section id="jobs" class="jobs-section">
+        <div class="container">
+            <h2>Latest Job Openings</h2>
+            <div id="job-list" class="job-list">
+                <!-- Jobs will be loaded here via JS -->
+                <p>Loading jobs...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>
+                PlaceHive Consultants is your trusted partner in finding the best career opportunities.
+                We provide 100% verified job listings across industries.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Email: info@placehiveconsultants.com</p>
+            <p>Phone: +91-XXXXXXXXXX</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 PlaceHive Consultants. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Our JS file -->
+    <script src="script.js"></script>
+</body>
+</html>

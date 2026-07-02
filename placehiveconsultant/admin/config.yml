@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main  # Change to your default branch if different
+
+# This folder holds your uploaded images
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+# Collections define your content structure
+collections:
+  - name: "jobs"
+    label: "Jobs"
+    folder: "jobs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Job Title", name: "title", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "markdown" }
