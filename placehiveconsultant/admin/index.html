@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>PlaceHive CMS</title>
 </head>
-
 <body>
 
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -15,24 +13,16 @@ if (window.netlifyIdentity) {
 
     window.netlifyIdentity.init();
 
-    // Login
-    window.netlifyIdentity.on("login", function () {
-        document.location.href = "/admin/";
+    window.netlifyIdentity.on("login", () => {
+        location.href="/admin/";
     });
 
-    // Logout
-    window.netlifyIdentity.on("logout", function () {
-        document.location.reload();
+    window.netlifyIdentity.on("logout", () => {
+        location.reload();
     });
 
-    // Invite
-    window.netlifyIdentity.on("invite", function () {
-        console.log("Invite accepted");
-    });
-
-    // Recovery
-    window.netlifyIdentity.on("recovery", function () {
-        console.log("Recovery");
+    window.netlifyIdentity.on("error", err=>{
+        console.error(err);
     });
 
 }
