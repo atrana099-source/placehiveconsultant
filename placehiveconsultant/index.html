@@ -75,5 +75,22 @@
 
     <!-- Our JS file -->
     <script src="script.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<script>
+if (window.netlifyIdentity) {
+    window.netlifyIdentity.init();
+
+    const hash = window.location.hash;
+
+    if (
+        hash.includes("recovery_token") ||
+        hash.includes("invite_token") ||
+        hash.includes("confirmation_token")
+    ) {
+        window.location.replace("/admin/" + hash);
+    }
+}
+</script>
 </body>
 </html>
